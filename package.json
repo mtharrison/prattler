@@ -1,0 +1,25 @@
+{
+  "name": "cloud_casino_chat",
+  "version": "0.0.0",
+  "description": "This is the service used by cloud casino for chatting between players",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:mtharrison/cloudcasino-chat.git"
+  },
+  "author": "Matt Harrison <hi@matt-harrison.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.1.0",
+    "socket.io": "~0.9.16"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-mocha-test": "~0.10.2"
+  }
+}
