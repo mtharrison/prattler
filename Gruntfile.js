@@ -3,15 +3,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['index.js', 'Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      files: ['index.js', 'lib/**/*.js', 'test/**/*.js', 'examples/**/*.js'],
       options: {
-        // options here to override JSHint defaults
-        globals: {
-          jQuery: true,
-          console: true,
-          module: true,
-          document: true
-        }
+        jshintrc: './.jshintrc'
       }
     },
     watch: {

@@ -1,16 +1,14 @@
-'use strict';
+var app = require('express')()
+  , session = require('express-session')
+  , cookieParser = require('cookie-parser')
+  , server = require('http').createServer(app)
+  , socket = require('socket.io').listen(server)
+  , Chat = require('../index.js')
 
-var app = require('express')(),
-    session = require('express-session'),
-    cookieParser = require('cookie-parser'),
-    server = require('http').createServer(app),
-    socket = require('socket.io').listen(server),
-    Chat = require('../index.js');
+app.use(cookieParser())
+app.use(session({secret: '63e381192a073ca59792f9a4c6947df5', key: 'sid'}))
 
-app.use(cookieParser());
-app.use(session({secret: 'no biggy', key: 'sid'}));
-
-server.listen(4000);
+server.listen(4000)
 
 var options = {
     authenticator: {
@@ -21,12 +19,12 @@ var options = {
             }
         }
     }
-};
+}
 
-new Chat(options).serve(socket, app);
+new Chat(options).serve(socket, app)
 
 // A basic client in Angular.js
 app.get('/', function(req, res){
-    console.log(JSON.stringify(req.session));
-    res.sendfile('basic.html');
-});
+    console.log(JSON.stringify(req.session))
+    res.sendfile('basic.html')
+})
