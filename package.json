@@ -1,20 +1,22 @@
 {
-  "name": "cloud_casino_chat",
+  "name": "prattler",
   "version": "0.0.0",
-  "description": "This is the service used by cloud casino for chatting between players",
+  "description": "This is a chat module that works with express and socket.io that bolts onto your existing application",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:mtharrison/cloudcasino-chat.git"
+    "url": "git@github.com:mtharrison/prattler.git"
   },
   "author": "Matt Harrison <hi@matt-harrison.com>",
-  "license": "ISC",
+  "license": "BSD",
   "dependencies": {
     "express": "~4.1.0",
-    "socket.io": "~0.9.16"
+    "socket.io": "~0.9.16",
+    "cookie-parser": "~1.0.1",
+    "express-session": "~1.0.4"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
